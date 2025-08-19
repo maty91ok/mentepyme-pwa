@@ -1,0 +1,21 @@
+{
+  "name": "MentePyme",
+  "short_name": "MentePyme",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0fdf4",
+  "theme_color": "#0d9488",
+  "description": "App de gestión simple para ventas, gastos y stock de PyMEs",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

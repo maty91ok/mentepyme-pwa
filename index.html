@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d9488" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>MentePyme - Gestión Simplificada</title>
+  </head>
+  <body>
+    <header>
+      <h1>MentePyme</h1>
+      <p>Gestión de Ventas, Gastos y Stock</p>
+    </header>
+    <main>
+      <!-- Ventas Formulario -->
+      <section id="ventas-section">
+        <h2>Registrar Venta</h2>
+        <form id="venta-form">
+          <label>
+            Fecha:
+            <input type="date" id="venta-fecha" required />
+          </label>
+          <label>
+            Monto:
+            <input type="number" id="venta-monto" step="0.01" min="0" required />
+          </label>
+          <label>
+            Medio de Pago:
+            <select id="venta-medio" required>
+              <option value="efectivo">Efectivo</option>
+              <option value="mp">MercadoPago</option>
+              <option value="tarjeta">Tarjeta</option>
+              <option value="otro">Otro</option>
+            </select>
+          </label>
+          <label>
+            Producto (opcional):
+            <input type="text" id="venta-producto" />
+          </label>
+          <button type="submit">Guardar Venta</button>
+        </form>
+        <div class="list-container">
+          <h3>Ventas Registradas</h3>
+          <ul id="ventas-list"></ul>
+        </div>
+      </section>
+      <!-- Gastos Formulario -->
+      <section id="gastos-section">
+        <h2>Registrar Gasto</h2>
+        <form id="gasto-form">
+          <label>
+            Fecha:
+            <input type="date" id="gasto-fecha" required />
+          </label>
+          <label>
+            Monto:
+            <input type="number" id="gasto-monto" step="0.01" min="0" required />
+          </label>
+          <label>
+            Categoría:
+            <input type="text" id="gasto-categoria" required />
+          </label>
+          <label>
+            Nota (opcional):
+            <input type="text" id="gasto-nota" />
+          </label>
+          <button type="submit">Guardar Gasto</button>
+        </form>
+        <div class="list-container">
+          <h3>Gastos Registrados</h3>
+          <ul id="gastos-list"></ul>
+        </div>
+      </section>
+      <!-- Stock Formulario -->
+      <section id="stock-section">
+        <h2>Registrar Stock</h2>
+        <form id="stock-form">
+          <label>
+            Producto:
+            <input type="text" id="stock-producto" required />
+          </label>
+          <label>
+            Tipo:
+            <select id="stock-tipo" required>
+              <option value="entrada">Entrada</option>
+              <option value="salida">Salida</option>
+            </select>
+          </label>
+          <label>
+            Cantidad:
+            <input type="number" id="stock-cantidad" step="0.01" min="0" required />
+          </label>
+          <label>
+            Costo unitario (opcional):
+            <input type="number" id="stock-costo" step="0.01" min="0" />
+          </label>
+          <button type="submit">Guardar Stock</button>
+        </form>
+        <div class="list-container">
+          <h3>Movimientos de Stock</h3>
+          <ul id="stock-list"></ul>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; <span id="current-year"></span> MentePyme. Todos los derechos reservados.</p>
+    </footer>
+    <!-- Supabase CDN (solo se carga si se establecen las claves) -->
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
